@@ -4,9 +4,7 @@ from ting_file_management.queue import Queue
 
 
 def process(path_file: str, instance: Queue):
-    print(range(len(instance)))
     for i in range(len(instance)):
-        print(f"i: {i}")
         file = instance.search(i)
         if file["nome_do_arquivo"] == path_file:
             return print("Arquivo já processado", file=sys.stderr)

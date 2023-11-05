@@ -18,16 +18,18 @@ def process(path_file: str, instance: Queue):
     print(item, file=sys.stdout)
 
 
-def remove(instance):
-    """Aqui irá sua implementação"""
+def remove(instance: Queue):
+    if len(instance) == 0:
+        return print("Não há elementos", file=sys.stdout)
+    try:
+        removed_item = instance.dequeue()
+        return print(
+            f"Arquivo {removed_item['nome_do_arquivo']} removido com sucesso",
+            file=sys.stdout,
+        )
+    except IndexError as error:
+        return print(error, file=sys.stderr)
 
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
-
-
-new_queue = Queue()
-new_queue2 = Queue()
-# process("ting_file_management/example.txt", new_queue)
-process("ting_file_management/example.txt", new_queue2)
-process("ting_file_management/example.txt", new_queue2)

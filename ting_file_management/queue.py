@@ -6,7 +6,6 @@ class Queue(AbstractQueue):
 
     def __init__(self):
         self._queue = []
-        print("Fila criada com sucesso")
 
     def __len__(self):
         return len(self._queue)

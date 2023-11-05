@@ -31,5 +31,9 @@ def remove(instance: Queue):
         return print(error, file=sys.stderr)
 
 
-def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+def file_metadata(instance: Queue, position: int):
+    try:
+        item = instance.search(position)
+        return print(item, file=sys.stdout)
+    except IndexError:
+        return print("Posição inválida", file=sys.stderr)
